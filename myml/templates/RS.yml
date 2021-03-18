@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myrs1
+spec:
+  replicas: 3
+  selector:
+   matchLabels:
+    env: prod
+    
+  template:
+    metadata: 
+      name: "mypod1"
+      labels:
+        env: prod
+        
+    spec:
+      containers:
+      - name: "myc1"
+        image: "1398abhisingh911/keras_flask"
